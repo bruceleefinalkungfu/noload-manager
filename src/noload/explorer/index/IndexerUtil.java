@@ -9,6 +9,7 @@ import java.util.AbstractMap.SimpleEntry;
 import javax.swing.filechooser.FileSystemView;
 
 import noload.explorer.bo.AllFilesDirectories;
+import noload.explorer.bo.EDirectory;
 import noload.explorer.bo.EFile;
 import noload.explorer.exception.ExplorerException;
 
@@ -43,6 +44,7 @@ public class IndexerUtil {
 	public static AllFilesDirectories getAllFiles(String path) throws ExplorerException{
 		AllFilesDirectories allFilesDirectories = new AllFilesDirectories();
 		List<EFile> fileList = allFilesDirectories.getFiles();
+		List<EDirectory> directories = allFilesDirectories.getDirectories();
 		File folder = new File(path);
 		
 		if( ! folder.isDirectory()){

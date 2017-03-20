@@ -1,31 +1,39 @@
 package noload.explorer.constant;
 
-public class FileNameDelimeters {
+public enum FileNameDelimeters {
 	
-	public static final String DASH = "-";
-	
-	public static final String DOT = ".";
-
-	public static final String UNDERSCORE = "_";
-	
-	public static final String COMMA = ",";
+	DASH ("-"),
+	DOT ("\\."),
+	UNDERSCORE("_"),
+	COMMA (","),
 
 	// People will search using apostrophe. No need to split the string using it.
-	//public static final String SINGLE_QUOTE = "'";
+	//SINGLE_QUOTE ("'"),
 	
-	public static final String EXCLAMATION_MARK = "!";
+	EXCLAMATION_MARK ("!"),
+	SPACE (" "),
+	LEFT_SQUARE_BRACKET ("\\["),
+	RIGHT_SQUARE_BRACKET ("\\]"),
+	LEFT_PARENTHESIS_BRACKET ("\\("),
+	RIGHT_PARENTHESIS_BRACKET ("\\)"),
+	LEFT_BRACES ("\\{"),
+	RIGHT_BRACES ("\\}"),
+	PLUS("\\+");
 	
-	public static final String SPACE = " ";
-
-	public static final String LEFT_SQUARE_BRACKET = "[";
-
-	public static final String RIGHT_SQUARE_BRACKET  = "]";
-
-	public static final String LEFT_PARENTHESIS_BRACKET = "(";
-
-	public static final String RIGHT_PARENTHESIS_BRACKET  = ")";
-
-	public static final String LEFT_BRACES = "{";
-
-	public static final String RIGHT_BRACES  = "}"; 
+	private final String value;
+	
+	FileNameDelimeters(String z){
+		value = z;
+	}
+	public String getValue(){
+		return value;
+	}
+	public static String getSplitString(){
+		StringBuilder sb = new StringBuilder();
+		for(FileNameDelimeters f : FileNameDelimeters.values()){
+			sb.append(f.getValue() + "|");
+		}
+		sb.deleteCharAt(sb.length()-1);
+		return new String(sb);
+	}
 }

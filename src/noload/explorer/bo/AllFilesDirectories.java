@@ -28,10 +28,14 @@ public class AllFilesDirectories {
 	public void setDirectories(List<EDirectory> directories) {
 		this.directories = directories;
 	}
-	
+
 	public void addFile(File f){
 		EFile eFile = new EFile(f);
-		files.add(eFile);
+		addFile(eFile);
+	}
+
+	public void addFile(EFile f){
+		files.add(f);
 	}
 	
 }

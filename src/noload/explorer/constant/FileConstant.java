@@ -3,7 +3,7 @@ package noload.explorer.constant;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExplorerConstant {
+public class FileConstant {
 	
 	public static final List<String> RESTRICTED_DIRECTORY_STARTS_WITH;
 	static{
@@ -21,8 +21,8 @@ public class ExplorerConstant {
 	 */
 	public static final String MAXIMUM_INDEXED_FILES_POSSIBLE = "1000000000000";
 	
-	public static final int TOTAL_POSSIBLE_DIGITS_IN_FILE_NO = MAXIMUM_INDEXED_FILES_POSSIBLE.length();
+	public static final int TOTAL_POSSIBLE_DIGITS_IN_FILE_ID = MAXIMUM_INDEXED_FILES_POSSIBLE.length();
 	
-	
+	public static final String LAST_FILE_ID_FILE_NAME = "lfid.nol";
 	
 }

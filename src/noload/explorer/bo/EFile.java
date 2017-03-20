@@ -14,8 +14,9 @@ public class EFile extends GenericFile{
 	
 	public EFile(File f){
 		super(f);
-		String fileName = f.getName();
-		extension = fileName.substring(fileName.lastIndexOf('.'));
+		List<Word> words = super.getWordsList();
+		// extension is the last word of a file name
+		extension = words.get(words.size()-1).toString();
 	}
 	
 	public String getExtension() {

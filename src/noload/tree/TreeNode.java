@@ -4,7 +4,7 @@ import java.util.Map;
 
 import noload.explorer.bo.Char;
 
-public class TreeNode<T extends Char> {
+public class TreeNode<T> {
 
 	private T t;
     

@@ -26,6 +26,7 @@ public class FileWriterUtil {
 		oos.close();
 	}
 	/**
+	 * Save file name and its absolute path separated by colon
 	 * @param list
 	 * @param f
 	 * @param append
@@ -35,7 +36,6 @@ public class FileWriterUtil {
 			throws IOException{
 		String str = "";
 		for(File file : list){
-			System.out.println(file.getAbsolutePath());
 			str += file.getName()+":"+file.getAbsolutePath()+"\n";
 		}
 		write(str, f, append);		

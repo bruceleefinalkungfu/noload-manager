@@ -8,14 +8,17 @@ import java.util.List;
  *
  */
 public class Char {
-	
+
 	private char c;
 	
-	List<BigInteger> fileId;
+	private BigInteger fileId;
+	
+	private Word wordReference;
 
-	public Char(char c, List<BigInteger> fileId) {
+	public Char(char c, BigInteger fileId, Word w) {
 		this.c = c;
 		this.fileId = fileId;
+		wordReference = w;
 	}
 
 	public char getC() {
@@ -25,4 +28,15 @@ public class Char {
 	public void setC(char c) {
 		this.c = c;
 	}
+	
+	public BigInteger getFileId() {
+		return fileId;
+	}
+
+	public void setFileId(BigInteger fileId) {
+		this.fileId = fileId;
+	}
+	
+	
+
 }
